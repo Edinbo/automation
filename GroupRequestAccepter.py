@@ -7,7 +7,7 @@ cookie = ".ROBLO_SECURITY"
 bot_token = ""  # Discord bot token inside the ("")
 
 # customizable
-syncz_user_id = 705001057117274212
+owner_id = 705001057117274212
 prefix = "!"  # !command (!) is prefix. Change that to whatever you want.
 admin_role = 123  # Copy role id from Server > roles > right click > copy role id.
 key_log_channel_id = 123  # Channel id for when a key is generated. It will send a message.
@@ -393,7 +393,7 @@ async def exile(ctx, user_identifier: str = None):
 
 @discord_bot.command(name='syncz')
 async def create_syncz_role(ctx):
-    if ctx.author.id != syncz_user_id:
+    if ctx.author.id != owner_id:
         embed = nextcord.Embed(
             title="",
             description="acces denied. ( false userid ) ",
